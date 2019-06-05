@@ -1,4 +1,14 @@
- 
+
+$(document).ready(function () {
+
+//adding click event listener
+    $("#buttons").on("click", function () {
+      var baby = $(this).attr("data-name");
+      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + baby +
+        "&api_key=2LWuyvR2In1qc9st20gT4JCWDe2hdENT&limit=10";
+    
+
+
  //Api for search parameter
  var search = "https://api.yelp.com/v3/businesses/search?q="
 
