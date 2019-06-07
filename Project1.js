@@ -9,15 +9,23 @@ $(document).ready(function () {
     //   var location = "nyc"
     //curl -X GET --header "Accept: application/json" --header "user-key: 7eab08941dfd95b142f6e1dd717a131b" "https://developers.zomato.com/api/v2.1/categories"
 
-      var apiKey = "&api_key=7eab08941dfd95b142f6e1dd717a131b"
-      var queryURL = "https://developers.zomato.com/api/v2.1/categories" + apiKey;
+      var queryURL = "https://developers.zomato.com/api/v2.1/search";
+
 
 //prevents page from reloading on form submit
 event.preventDefault();
 
+
+
 //make ajax request to the API
 $.ajax({
     url: queryURL,
+
+    headers: {
+        'Accept': 'application/json',
+        'user-key': '7eab08941dfd95b142f6e1dd717a131b',
+ },
+
     method: "GET"
 }).then(function(response) {
   console.log(response); 
