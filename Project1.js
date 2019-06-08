@@ -9,8 +9,13 @@ $(document).ready(function () {
     //   var location = "nyc"
     //curl -X GET --header "Accept: application/json" --header "user-key: 7eab08941dfd95b142f6e1dd717a131b" "https://developers.zomato.com/api/v2.1/categories"
 
-      var queryURL = "https://developers.zomato.com/api/v2.1/search?q={pizza}&start=0&count=20";
+      var queryURL = "https://developers.zomato.com/api/v2.1/search?q={italian}&start=0&count=20";
+      
+      // var searchKey = cuisine;
+      
+      // var searchCount = "&start=0&count=20";
 
+      // var searchURL = queryURL + {searchKey} + searchCount;
 
 //prevents page from reloading on form submit
 event.preventDefault();
