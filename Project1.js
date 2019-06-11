@@ -43,10 +43,10 @@ $(document).ready(function () {
             var imageUrl = r.restaurant.featured_image;
             var name = r.restaurant.name;
             var menu = r.restaurant.menu_url;
-            var location = ;
-            var priceRange = ;
+            // var location = ;
+            // var priceRange = ;
 
-
+            console.log(menu)
             //website, location, price, hours
 
             //create image tags
@@ -55,8 +55,10 @@ $(document).ready(function () {
             restaurantImage.attr("alt", "restaurant image");
             // console.log(restaurantImage)
             var newRow = $("<tr>").append(
-                $("<th>").text("hi"),
+                $("<th>").text(name),
                 $("<td>").html('<img src="'+imageUrl+'">'),
+                $("<td>").html(name),
+                $("<td>").text(menu),
             );
                 console.log(newRow)
 
