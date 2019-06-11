@@ -41,6 +41,12 @@ $(document).ready(function () {
             results.forEach(function(r) {
             //define variables for each attribute
             var imageUrl = r.restaurant.featured_image;
+            var name = r.restaurant.name;
+            var menu = r.restaurant.menu_url;
+            var location = ;
+            var priceRange = ;
+
+
             //website, location, price, hours
 
             //create image tags
