@@ -55,7 +55,7 @@ $(document).ready(function () {
             restaurantImage.attr("alt", "restaurant image");
             //create menuUrl tags
             var restaurantMenu = $("<a>");
-            restaurantMenu.attr("href", menuUrl);
+            restaurantMenu.attr("src", menuUrl);
             restaurantMenu.attr("alt", "restaurant menu");
             
             console.log(restaurantMenu)
@@ -63,7 +63,7 @@ $(document).ready(function () {
             //create table rows
             var newRow = $("<tr>").append(
                 $("<th>").text(name),
-                $("<td>").html('<a href="'+menuUrl+'">'),
+                $("<td>").html('<a href="'+menuUrl+'">menu</a>'),
                 $("<td>").html('<img src="'+imageUrl+'">'),
     
             );
