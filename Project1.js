@@ -42,23 +42,30 @@ $(document).ready(function () {
             //define variables for each attribute
             var imageUrl = r.restaurant.featured_image;
             var name = r.restaurant.name;
-            var menu = r.restaurant.menu_url;
+            var menuUrl = r.restaurant.menu_url;
             // var location = ;
             // var priceRange = ;
 
-            console.log(menu)
+            console.log(menuUrl)
             //website, location, price, hours
 
             //create image tags
             var restaurantImage = $("<img>");
             restaurantImage.attr("src", imageUrl);
             restaurantImage.attr("alt", "restaurant image");
-            // console.log(restaurantImage)
+            //create menuUrl tags
+            var restaurantMenu = $("<a>");
+            restaurantMenu.attr("href", menuUrl);
+            restaurantMenu.attr("alt", "restaurant menu");
+            
+            console.log(restaurantMenu)
+          
+            //create table rows
             var newRow = $("<tr>").append(
                 $("<th>").text(name),
+                $("<td>").html('<a href="'+menuUrl+'">'),
                 $("<td>").html('<img src="'+imageUrl+'">'),
-                $("<td>").html(name),
-                $("<td>").text(menu),
+    
             );
                 console.log(newRow)
 
