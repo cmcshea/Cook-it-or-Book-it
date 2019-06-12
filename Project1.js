@@ -40,7 +40,7 @@ $(document).ready(function () {
             //define object attributes to pull to app
             results.forEach(function(r) {
             //define variables for each attribute
-            var imageUrl = r.restaurant.featured_image;
+            var imageUrl = r.restaurant.featured_image.fixed_height;
             var name = r.restaurant.name;
             var menuUrl = r.restaurant.menu_url;
             var location = r.restaurant.location.address;

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Project One!</title>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid text-center">
+            <div class="container">
+                <h1 class="display-4">Project One</h1>
+                <p class="lead">Eat In! Eat Out! A better Aproach to Living</p>
+            </div>
+        </div>
+        <div class="card">
+            <h5 class="card-header">Recipe Label</h5>
+            <div class="card-body">
+                <table class="table table-dark" id='recipee-table'>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Health-Labels</th>
+                            <th scope="col">Caution</th>
+                            <th scope="col">Recipes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Search</td>
+                            <td>Search</td>
+                            <td>Search</td>
+                            <td>Search</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+    var app_id ="app_id=522e495c"
+    var app_key= "app_key=7a10cb63e3cc3756fddfd774a4d1f20b"
+    // var cuisine = $("#cuisine-type").val().trim();
+    var url = `https://api.edamam.com/search?q=` + "chinese" +`&`+ app_id +`&`+ app_key +`&from=0&to=3&calories=591-722&health=alcohol-free`
+    //console.log(url);
+    // create a var for the chicken (user input)
+    $.ajax({
+    url: url,
+    method: "GET",
+    dataType: 'jsonp'
+    }).done(function (response){
+    var hits = response.hits;
+    console.log(response);
+    // var image = hits.healthLabels.image;
+    // var healthLabel = hits.ingredients.label;
+    // var caution = hits.cautions;
+    //var recipe = 
+    hits.forEach(function(hit){
+        var imageUrl = hit.recipe.image;
+        var healthLabel = hit.recipe.label;
+        var caution = hit.recipe.cautions;
+        var recipes = hit.recipe.ingredientLines;
+        //console.log(hits.recipe.ingredientLines);
+        // console.log(hits.recipe.ingredientLines.length);
+        var foodImage = $('<img>');
+        foodImage.attr('src', imageUrl);
+        foodImage.attr('alt', 'food image');
+        //console.log(Url);
+        // Create the new row
+        var newRow = $('<tr>').append(
+            $('<th>').text("hi"),
+            $('<td>').html('<img src="'+imageUrl+'">'),
+            $('<td>').text(healthLabel),
+            $('<td>').text(caution),
+            $('<td>').text(recipes)
+        );
+                console.log(newRow)
+        // Append the new row to the table
+        $('#recipee-table > tbody').append(newRow);
+    });
+    });
+    
+    </script>
+  </body>
+</html>
