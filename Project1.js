@@ -13,7 +13,7 @@ $(document).ready(function () {
        
         https://developers.zomato.com/api/v2.1/search?entity_id=280&entity_type=city&q=pizza&count=10
 
-        var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=280&entity_type=city&q="
+        var queryURL = "https://developers.zomato.com/api/v2.1/search?lat=40.730610&lon=-73.935242&q="
         var cuisineType = cuisine;
         var searchCount = "10";
         var searchURL = queryURL + cuisineType + "&count=" + searchCount;
