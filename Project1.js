@@ -19,9 +19,7 @@ $(document).ready(function () {
         var searchURL = queryURL + cuisineType + "&count=" + searchCount;
 
         //prevents page from reloading on form submit
-
         event.preventDefault();
-
 
         //make ajax request to the API
         $.ajax({
@@ -73,7 +71,7 @@ $(document).ready(function () {
                 console.log(newRow)
 
             //Append the new row to the table
-            $("#show_results_here").append(newRow);
+            $('#restuarant-table > tbody').append(newRow);
 
             });
 

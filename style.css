@@ -1,0 +1,20 @@
+
+* {
+    box-sizing: border-box;
+    /* text-align: left; */
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+body {
+    background-size: 100%;
+}
+
+/* .container {
+    background: white;
+    text-align: center;
+} */
