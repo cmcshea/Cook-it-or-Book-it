@@ -34,18 +34,19 @@ $(document).ready(function () {
         //function to retrieve date from Zomato api
         .done(function (response) {
             var results = response.restaurants;
-            console.log(results);
+            // console.log(results);
             //define object attributes to pull to app
             results.forEach(function(r) {
             //define variables for each attribute
             var imageUrl = r.restaurant.featured_image;
             var name = r.restaurant.name;
+            var cost = r.restaurant.average_cost_for_two;
             var menuUrl = r.restaurant.menu_url;
             var location = r.restaurant.location.address;
             var hours = r.restaurant.timings;
             // var priceRange = ;
 
-            console.log(hours)
+            console.log(cost)
             //website, location, price, hours
 
             //create image tags
@@ -64,9 +65,11 @@ $(document).ready(function () {
                 $("<th>").text(name),
                 $("<th>").text(location),
                 $("<th>").text(hours),
-                $("<td>").html('<a href="'+menuUrl+'">menu</a>'),
+                $("<th>").text(cost),
+                $("<td>").html('<a href="'+menuUrl+'">Menu</a>'),
+                //get menu link to open in new window
                 $("<td>").html('<img src="'+imageUrl+'">'),
-    
+     
             );
                 console.log(newRow)
 
