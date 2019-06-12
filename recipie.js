@@ -9,6 +9,10 @@ $(document).ready(function () {
         var url = `https://api.edamam.com/search?q=` + cuisine + `&` + app_id + `&` + app_key + `&from=0&to=3&calories=591-722&health=alcohol-free`
         //console.log(url);
         // create a var for the chicken (user input)
+
+        //prevents page from reloading on form submit
+        event.preventDefault();
+
         $.ajax({
             url: url,
             method: "GET",
